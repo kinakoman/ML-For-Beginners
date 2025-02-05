@@ -1,0 +1,103 @@
+\documentclass[a4paper,12pt]{ltjsreport}
+
+\usepackage{comment}
+\usepackage{float}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{pict2e}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{underscore}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[top=10truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}%余白設定
+\usepackage{hyperref,graphicx}
+\usepackage{chemmacros}
+\usepackage{subcaption}
+\usepackage{chemfig}
+\usepackage[version=3]{mhchem}  
+\usepackage{braket}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{wrapfig}
+
+% 新しい関数を定義
+\newcommand{\vectxy}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\vectxyz}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\vectxyzw}[4]{\begin{pmatrix}#1\\#2\\#3\\#4\end{pmatrix}}
+\newcommand{\vectxyzwu}[5]{\begin{pmatrix}#1\\#2\\#3\\#4\\#5\end{pmatrix}}
+\newcommand{\tvectxy}[2]{\begin{pmatrix}#1 & #2\end{pmatrix}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\ketvec}[1]{\ensuremath{\Ket{#1}}}
+\newcommand{\con}[1]{\ensuremath{#1}}
+\newcommand{\tensor}[2]{\ensuremath{{#1}\otimes{#2}}}
+\newcommand{\tensorket}[2]{\ensuremath{\Ket{#1}\otimes\Ket{#2}}}
+\newcommand{\tensorkets}[3]{\ensuremath{\Ket{#1}\otimes\Ket{#2}\otimes\Ket{#3}}}
+\newcommand{\absquare}[1]{\ensuremath{\left|#1\right|^{2}}}
+\newcommand{\braketvec}[2]{\ensuremath{\Braket{#1|#2}}}
+\newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bell}[1]{\ensuremath{\Ket{{#1}^{\pm}}}}
+\newcommand{\maru}[1]{\textcircled{\scriptsize #1}}
+\newcommand{\redbf}[1]{\textbf{\color{red}#1}}
+\newcommand{\wave}{\ensuremath{\sim}}
+\newcommand{\vecb}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\vecbsuf}[2]{\ensuremath{\bm{#1}_{#2}}}
+
+ %箇条書き(数字)をカッコを変更
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+%箇条書き(記号)の記号を変更
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\triangleright$}
+
+%目次にページジャンプのリンクを挿入
+\hypersetup{
+  setpagesize=false,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+}
+
+\begin{document}
+\begin{center}
+  \textbf{\LARGE{46243110 野崎峻平}}
+\end{center}
+\subsubsection*{前回の振り返り}
+細胞同士が接着する際には、膜同士が接触することになるが、
+膜同士の接着を行うタンパクのはcadherinと呼ばれる。
+各細胞のcadherinの表現量を変化させて観察した実験では、
+cadherinの発現量が少ない場合は各細胞は散らばって存在していたが
+発現量が多い場合では細胞同士は密接に集まって存在していた。\par
+cadherinは膜を貫通して細胞内のアクチンフィラメントに繋がり、
+両端の細胞から牽引力によって引っ張られる。
+この時、cadherinとアクチンフィラメントの接続を担うαカテニンは伸張する。
+さらにαカテニンに対してVinculinが結合し、Vinculinが別のアクチンフィラメントに接続する
+ことで細胞間の張力は増加する。
+\subsection*{YAP/TAZ}
+転写共役因子のことを指す。正常細胞同士の相互作用では、細胞同士の接着は単層を形成し細胞の上に覆いかぶさるような
+接触はしない。一方、がん細胞等は単層形成ではなく無造作な接着と増加を行う。
+YAP/TAZ等の細胞の転写共役因子は、細胞の密度によって強く発現する個所が変化する。
+さらに、細胞が接着している基板の硬さや接着面積によっても発現個所が異なる。\par
+細胞あ伸張すると細胞の面積や接着点が増加することになるが
+YAPの細胞核における局在は面積には依存しない。\par
+細胞が接着する基板が柔らかく細胞の働きが活発でない場合は
+YAPは細胞内で核外で存在しているが、基板が硬い環境ではYAPは核内へと入りやすくなっている。
+細胞に加えられる力によってもYAPの局在状態は変化し、細胞に力加えられるとYAPは核内へと入る。
+この現象は加えられた力が細胞核に影響を及ぼしている場合のみであり、
+細胞核周辺の基質上のみに力が加えられた場合はYAPの局在は変化しない。
+\subsection*{光褪色後蛍光回復法}
+分子の動きと蛍光状態を関連づけた観察方法。
+細胞内の分子が一切動かない場合は細胞のどの部分も蛍光を発しないが、
+分子が動き回るとその速さに応じて蛍光状態が回復する。これはYAPの観察にも用いられている。
+\end{document}
+

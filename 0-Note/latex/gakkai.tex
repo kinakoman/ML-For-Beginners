@@ -1,0 +1,165 @@
+\documentclass[a4paper,12pt]{ltjsreport}
+
+\usepackage{comment}
+\usepackage{float}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{pict2e}
+\usepackage{wrapfig}
+\usepackage{bm}
+\usepackage{url}
+\usepackage{underscore}
+\usepackage{colortbl}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\usepackage[top=10truemm,bottom=30truemm,left=25truemm,right=25truemm]{geometry}%余白設定
+\usepackage{hyperref,graphicx}
+\usepackage{chemmacros}
+\usepackage{subcaption}
+\usepackage{chemfig}
+\usepackage[version=3]{mhchem}  
+\usepackage{braket}
+\usepackage{mathtools}
+\usepackage{url}
+\usepackage{wrapfig}
+
+% 新しい関数を定義
+\newcommand{\vectxy}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\vectxyz}[3]{\begin{pmatrix}#1\\#2\\#3\end{pmatrix}}
+\newcommand{\vectxyzw}[4]{\begin{pmatrix}#1\\#2\\#3\\#4\end{pmatrix}}
+\newcommand{\vectxyzwu}[5]{\begin{pmatrix}#1\\#2\\#3\\#4\\#5\end{pmatrix}}
+\newcommand{\tvectxy}[2]{\begin{pmatrix}#1 & #2\end{pmatrix}}
+\newcommand{\red}[1]{{\color{red}#1}}
+\newcommand{\ketvec}[1]{\ensuremath{\Ket{#1}}}
+\newcommand{\con}[1]{\ensuremath{#1}}
+\newcommand{\tensor}[2]{\ensuremath{{#1}\otimes{#2}}}
+\newcommand{\tensorket}[2]{\ensuremath{\Ket{#1}\otimes\Ket{#2}}}
+\newcommand{\tensorkets}[3]{\ensuremath{\Ket{#1}\otimes\Ket{#2}\otimes\Ket{#3}}}
+\newcommand{\absquare}[1]{\ensuremath{\left|#1\right|^{2}}}
+\newcommand{\braketvec}[2]{\ensuremath{\Braket{#1|#2}}}
+\newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
+\newcommand{\bell}[1]{\ensuremath{\Ket{{#1}^{\pm}}}}
+\newcommand{\maru}[1]{\textcircled{\scriptsize #1}}
+\newcommand{\redbf}[1]{\textbf{\color{red}#1}}
+\newcommand{\wave}{\ensuremath{\sim}}
+\newcommand{\vecb}[1]{\ensuremath{\bm{#1}}}
+\newcommand{\vecbsuf}[2]{\ensuremath{\bm{#1}_{#2}}}
+
+ %箇条書き(数字)をカッコを変更
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+
+%箇条書き(記号)の記号を変更
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{$\triangleright$}
+
+%目次にページジャンプのリンクを挿入
+\hypersetup{
+  setpagesize=false,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+}
+
+\begin{document}
+\section*{放射光学会 2025年1月10-12日}
+\subsection*{ポスターへのコメント}
+\begin{itemize}
+  \item 仕切りの性能評価はできないか?
+        ⇒そもそもSU-8が仕切りとして作用できているのか、高集積化した時の50um程度の短い幅で仕切りが実現できているのか
+  \item SiN窓からのBGの目標値は?
+        ⇒どの程度BGが小さければ十分?見たい試料に対してどれほどのBGになっている?
+  \item そもそも見たい試料は何?
+  \item SiNより窓材料として適したものはないのか?
+        ⇒単原子層の窓は用意できないか?
+\end{itemize}
+\subsection*{小角散乱法における数理モデルとパラメータのベイズ推論}
+\begin{itemize}
+  \item 小角散乱から得れれるデータ解析における試料パラメータとモデルをベイズ推論を用いて推定
+  \item パラメータは分かるがモデルって?
+  \item 実験データから条件付き確率を用いてパラメータの事後分布を求める。
+  \item ベイズ計測は交換モンテカルロ法を利用⇒局所解にトラップされず大域解を求めることが出来る
+  \item \textbf{数値解析でたびたび出てくるフィッティングって?}
+\end{itemize}
+\subsection*{スパースモデリングによる運動量密度の再構成～金属自由電子モデル}
+\begin{itemize}
+  \item コンプトン散乱によるフェルミ面の形状測定
+  \item コンプトン散乱は合金、室温磁場環境下で利用可能
+  \item コンプトン散乱断面積を電子運動量密度を用いて変換し、フェルミ面の謙譲を予想\\
+        ⇒電子運動量密度の概形が分かればフェルミ面形状が分かる
+  \item 従来は直セルフーリエ変換法を用いた\\
+        ⇒コンプトン散乱は散乱断面積が小さく長時間の測定が必要、複数の方向からのコンプトンプロファイルが必要
+  \item スパースモデルが従来手法の欠点の解に\\
+        ⇒圧縮センシングとかいうのを利用しているみたい
+  \item 金属自由電子モデルはフェルミ面が球
+\end{itemize}
+\subsection*{シングルショット顕微分光イメージングによるSACLA軟X線ビームの評価}
+\begin{itemize}
+  \item XFELは短パルス、高輝度
+        ⇒ショットの空間分布は本当に均一?
+  \item Wolterミラーとマルチ開口回折格子のシングルショット軟X線顕微分光イメージング
+  \item マルチ開口回折格子はシリコン基板加工で作製してそう
+  \item 開口幅は600×400um、300nm間隔
+  \item 加工領域は10mm×10mm、全体に開口が周期的に設計されていて
+        MLEAのように集光したビームを一点に打つのでなく加工領域全体にX線を照射するみたい
+  \item ショットごとに入射強度が異なるだけでなく、エネルギーや対称性、ピークの鋭さも異なっている
+        ⇒これらが何に起因しているかは不明
+\end{itemize}
+\subsection*{Development of 20.2 Mpixel CITIUS detector for SACLA}
+\begin{itemize}
+  \item CITIUSは第四世代光源のSACLAの光源を余すことなく検出すための検出器
+  \item 20.2メガピクセルの検出が可能
+  \item センサー数は72
+  \item MPCCSと比較してpeak signalが7倍近くに
+  \item データ数は(仕方ないが)増加してしまう
+  \item 393mm×321mmのディテクターサイズになる
+\end{itemize}
+\subsection*{XFEL100-nm 局所解析による燃料電池触媒インクのアイオノマー被膜構造の評価}
+\begin{itemize}
+  \item 固体高分子形燃料の触媒に着目
+  \item 触媒の被膜体であるアイオノマーの被膜状況が重要
+        ⇒軽元素のため従来手法では詳しい解析が不可
+  \item XFELの実験系ではMASIC-SとMLEAを利用
+  \item 取得される回折パターンは試料のヒット個所によって異なる
+  \item 回折パターンの傾向から分類わけ
+        ⇒スペックルサイズと強度を元に分類
+        ⇒各パターンから散乱曲線を求める
+  \item 乾燥試料は曲線に分類ごとの差はない
+  \item 溶液試料では曲線に変化
+        ⇒アイオノマーの湿潤膨張が原因と判断
+  \item 上述の差は傾きだったためシングルショットごとの解析を実施
+        ⇒傾きの違いはアイオノマーの厚みと予想?
+        ⇒傾きの分布からアイオノマーの厚み均一性が評価可能
+  \item アイオノマーの被膜状況をTEMで観察
+        ⇒アイオノマーの厚さ分布の傾向がシングルショット解析と一致
+  \item 反応性分子動力学計算による宣言しモデルシミュレーション
+        ⇒サイズの異なる触媒モデルをさらに集め凝集体モデルを作成
+  \item 実験モデルと同様にアイオノマーの厚さに応じて散乱曲線の傾きが変化するという事実が確認された
+        ⇒シミュレーションと実験データの解析結果が一致した
+\end{itemize}
+以下質問
+\begin{itemize}
+  \item TEMとの解析結果との違いは?
+        ⇒TEMと異なり湿潤・常温状態での試料観察が可能だが現状XFELだがら新たに分かっている情報はない
+  \item アイオノマーの厚さによる曲線の違いは本当に厚さの違い?他の触媒由来の電子密度なんかも拾ってしまうのでは?
+  \item アイオノマーは水に溶ける?常温でナフィオンタイプのアイオノマーはインク状態だとMLEAのような溶液中に溶けだしてしまうのは?
+        実験で見ているものは被膜状態のアイオノマーではなく溶液に溶けだしたものでは?
+\end{itemize}
+\subsection*{7 nm集光硬X線FELによる直接三光子吸収の観測}
+\begin{itemize}
+  \item \con{10^{22}W/cm^2}強度の7nm集光硬X線FEL
+        ⇒世界最大の集光強度XFEL
+  \item X線三光子吸収
+        ⇒X線が特定の物質に当たると電子順位の移動で蛍光X線が発生
+        ⇒平たく言えば電子が順位を変える間にX線を三回吸収して、X線を蛍光するのがX線三光子吸収
+  \item
+\end{itemize}
+\end{document}
+
